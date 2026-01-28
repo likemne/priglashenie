@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение в Telegram-чат | Nikitinavedet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #0088cc, #34b7f1);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .invitation-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #444;
+            text-align: center;
+        }
+        
+        .telegram-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #0088cc;
+        }
+        
+        .telegram-icon {
+            font-size: 4rem;
+            color: #0088cc;
+            margin-bottom: 20px;
+        }
+        
+        .telegram-username {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #0088cc;
+            margin-bottom: 15px;
+        }
+        
+        .telegram-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0088cc;
+            color: white;
+            text-decoration: none;
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
+            margin-top: 10px;
+        }
+        
+        .telegram-btn:hover {
+            background-color: #006699;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 136, 204, 0.5);
+        }
+        
+        .telegram-btn:active {
+            transform: translateY(0);
+        }
+        
+        .telegram-btn i {
+            margin-right: 12px;
+            font-size: 1.6rem;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 20px;
+        }
+        
+        .feature {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 25px 15px;
+            background-color: #f0f8ff;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: #0088cc;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .feature p {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 25px;
+            color: #666;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+            background-color: #f9f9f9;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(0, 136, 204, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 136, 204, 0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .telegram-btn {
+                padding: 15px 30px;
+                font-size: 1.2rem;
+            }
+            
+            .features {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .telegram-username {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Приглашение в Telegram-чат</h1>
+            <p>Присоединяйтесь к нашему сообществу в Telegram для общения, обмена информацией и получения актуальных новостей</p>
+        </div>
+        
+        <div class="content">
+            <div class="invitation-text">
+                <p>Мы рады пригласить вас в наш уютный и информативный Telegram-чат, где вы сможете общаться с единомышленниками, задавать вопросы и делиться своим опытом.</p>
+            </div>
+            
+            <div class="telegram-link pulse">
+                <div class="telegram-icon">
+                    <i class="fab fa-telegram"></i>
+                </div>
+                <div class="telegram-username">@Nikitinavedet</div>
+                <p style="margin-bottom: 20px; text-align: center;">Нажмите на кнопку ниже, чтобы перейти в наш чат</p>
+                
+                <a href="https://t.me/Nikitinavedet" class="telegram-btn" target="_blank">
+                    <i class="fab fa-telegram"></i> Перейти в Telegram-чат
+                </a>
+                
+                <p style="margin-top: 20px; font-size: 0.9rem; color: #777; text-align: center;">
+                    Ссылка откроется в новом окне. Если у вас не установлен Telegram, вы можете скачать его на <a href="https://desktop.telegram.org/" target="_blank" style="color: #0088cc;">официальном сайте</a>.
+                </p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-comments"></i>
+                    <h3>Живое общение</h3>
+                    <p>Общайтесь с участниками чата в реальном времени, задавайте вопросы и получайте быстрые ответы.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-newspaper"></i>
+                    <h3>Актуальные новости</h3>
+                    <p>Будьте в курсе последних событий и получайте важные обновления первыми.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h3>Сообщество</h3>
+                    <p>Станьте частью дружелюбного сообщества единомышленников.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 Приглашение в Telegram-чат @Nikitinavedet. Все права защищены.</p>
+            <p style="margin-top: 5px;">Ссылка на чат: <a href="https://t.me/Nikitinavedet" style="color: #0088cc;">https://t.me/Nikitinavedet</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Добавляем анимацию при наведении на кнопку
+        document.querySelector('.telegram-btn').addEventListener('mouseenter', function() {
+            this.classList.remove('pulse');
+        });
+        
+        document.querySelector('.telegram-btn').addEventListener('mouseleave', function() {
+            setTimeout(() => {
+                this.classList.add('pulse');
+            }, 300);
+        });
+        
+        // Проверка, открылась ли ссылка
+        document.querySelector('.telegram-btn').addEventListener('click', function(e) {
+            // Если по какой-то причине ссылка не открывается, показываем сообщение
+            setTimeout(() => {
+                if (!document.hidden) {
+                    // Пользователь все еще на странице, возможно, ссылка не открылась
+                    console.log("Если ссылка не открылась, скопируйте: https://t.me/Nikitinavedet");
+                }
+            }, 1000);
+        });
+        
+        // Анимация появления элементов при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            const features = document.querySelectorAll('.feature');
+            features.forEach((feature, index) => {
+                feature.style.animationDelay = `${index * 0.2}s`;
+                feature.style.animation = 'fadeIn 0.6s ease-out forwards';
+                feature.style.opacity = '0';
+            });
+        });
+    </script>
+</body>
+</html>
