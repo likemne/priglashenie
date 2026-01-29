@@ -436,6 +436,34 @@
             font-size: 1.8rem;
         }
         
+        /* Новые стили для 2gis кнопки */
+        .gis-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2E9C45;
+            color: var(--white);
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(46, 156, 69, 0.2);
+        }
+        
+        .gis-btn:hover {
+            background-color: #268537;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(46, 156, 69, 0.3);
+        }
+        
+        .gis-btn i {
+            margin-right: 10px;
+            font-size: 1.4rem;
+        }
+        
         /* Футер */
         footer {
             background-color: var(--black);
@@ -606,7 +634,7 @@
     </style>
 </head>
 <body>
-    <!-- Шапка с навигацией (без изменений) -->
+    <!-- Шапка с навигацией -->
     <header>
         <div class="container">
             <nav>
@@ -621,18 +649,17 @@
         </div>
     </header>
 
-    <!-- Главная страница (ОБНОВЛЕНО ВРЕМЯ И АДРЕС) -->
+    <!-- Главная страница (ОБНОВЛЕНО НА ФЕВРАЛЬ 2026) -->
     <section id="home" class="page active">
         <div class="hero">
             <div class="film-strip"></div>
             <div class="hero-content">
                 <h1>Премия "ЛЕНАкс"</h1>
                 <div class="hero-subtitle">Торжественный юбилей в стиле кинопремии</div>
-                <!-- ОБНОВЛЕНО: Изменено время -->
-                <div class="hero-date">15 декабря 2023 • Сбор гостей в 14:00</div>
+                <!-- ОБНОВЛЕНО: Февраль 2026 -->
+                <div class="hero-date">15 февраля 2026 • Сбор гостей в 14:00</div>
                 <div class="hero-description">
                     <p>Дорогие друзья! Мы приглашаем вас на уникальное событие — юбилей, оформленный в стиле настоящей кинопремии!</p>
-                    <!-- ОБНОВЛЕНО: Изменен адрес -->
                     <p>Вечер пройдет в уютном комплексе "Серебряный ручей" (г. Улан-Удэ, Верхняя Березовка). Вас ждет атмосфера голливудской церемонии: красная дорожка, фотозоны в стиле кино, награды в тематических номинациях и, конечно, главная героиня вечера — наша юбилярша!</p>
                     <p>Это будет незабываемый праздник, где каждый почувствует себя звездой большого экрана!</p>
                 </div>
@@ -657,19 +684,19 @@
         </div>
     </section>
 
-    <!-- Страница с деталями (ОБНОВЛЕНА ПРОГРАММА) -->
+    <!-- Страница с деталями (ОБНОВЛЕНО НА ФЕВРАЛЬ 2026) -->
     <section id="details" class="page">
         <div class="container">
             <div class="section-content">
                 <h2 class="section-title">Программа вечера</h2>
                 <div class="theme-explanation">
                     <h3><i class="fas fa-info-circle" style="color: var(--gold); margin-right: 10px;"></i> Важная информация</h3>
-                    <!-- ОБНОВЛЕНО: Изменено время -->
+                    <!-- ОБНОВЛЕНО: Февраль 2026 -->
                     <p>Сбор гостей в 14:00, начало торжественной части в 14:30. Вечер пройдет в формате кинопремии с элементами шоу и торжественного ужина.</p>
                     <p>Каждый гость является не просто зрителем, а полноценным участником церемонии!</p>
                 </div>
                 <div class="details-grid">
-                    <!-- ОБНОВЛЕНО: Вся программа сдвинута на новое время -->
+                    <!-- ОБНОВЛЕНО: Программа на февраль 2026 -->
                     <div class="detail-card"><i class="fas fa-walking"></i><h3>14:00 - 14:30</h3><p>Сбор гостей, красная дорожка, фотосессия, welcome-коктейль</p></div>
                     <div class="detail-card"><i class="fas fa-award"></i><h3>14:30 - 16:00</h3><p>Торжественная церемония "Премия ЛЕНАкс" с вручением наград</p></div>
                     <div class="detail-card"><i class="fas fa-utensils"></i><h3>16:00 - 18:00</h3><p>Праздничный ужин, тосты, поздравления</p></div>
@@ -702,7 +729,7 @@
         </div>
     </section>
 
-    <!-- Страница контактов и чата (ОБНОВЛЕН АДРЕС И ДОБАВЛЕНА КАРТА) -->
+    <!-- Страница контактов и чата (ОБНОВЛЕНА КАРТА И ДОБАВЛЕНЫ ТРАНСПОРТ, 2GIS) -->
     <section id="contacts" class="page">
         <div class="container">
             <div class="section-content">
@@ -711,33 +738,37 @@
                     <div class="location-info">
                         <h3><i class="fas fa-map-marker-alt" style="color: var(--gold); margin-right: 15px;"></i> Место проведения</h3>
                         <div class="address-card">
-                            <!-- ОБНОВЛЕНО: Новый адрес -->
                             <h4>Комплекс "Серебряный ручей"</h4>
                             <p><i class="fas fa-map-pin"></i> Адрес: г. Улан-Удэ, Верхняя Березовка</p>
                             <p><i class="fas fa-car"></i> Парковка: для гостей бесплатная</p>
-                            <!-- ОБНОВЛЕНО: Новое время -->
-                            <p><i class="fas fa-clock"></i> Время: 15 декабря 2023, сбор гостей с 14:00</p>
+                            <!-- ОБНОВЛЕНО: Февраль 2026 -->
+                            <p><i class="fas fa-clock"></i> Время: 15 февраля 2026, сбор гостей с 14:00</p>
                         </div>
                         <div style="padding: 20px; background-color: rgba(212, 175, 55, 0.1); border-radius: 10px;">
                             <h4 style="color: var(--dark-red); margin-bottom: 15px;">Как добраться:</h4>
-                            <p style="margin-bottom: 10px;">• На машине: из центра Улан-Удэ по трассе в сторону Верхней Березовки</p>
-                            <p>• На такси: адрес для навигатора "Верхняя Березовка, Серебряный ручей"</p>
+                            <p style="margin-bottom: 8px;">• На машине: из центра Улан-Удэ по трассе в сторону Верхней Березовки</p>
+                            <p style="margin-bottom: 8px;">• На такси: адрес для навигатора "Верхняя Березовка, Серебряный ручей"</p>
+                            <!-- ДОБАВЛЕНА ИНФОРМАЦИЯ ОБ ОБЩЕСТВЕННОМ ТРАНСПОРТЕ -->
+                            <p style="margin-bottom: 8px;">• Автобусы: 346, 300</p>
+                            <p>• Маршрутка: 37</p>
                         </div>
+                        <!-- КНОПКА 2GIS -->
+                        <a href="https://2gis.ru/ulanude/geo/70000001089165128/107.678326,51.904615" 
+                           class="gis-btn" target="_blank" style="margin-top: 20px; display: inline-block;">
+                            <i class="fas fa-map-marked-alt"></i> Открыть в 2GIS
+                        </a>
                     </div>
-                    <!-- НОВЫЙ БЛОК: Реальная карта вместо заглушки -->
-<div class="map-container" style="flex: 1; min-width: 300px; height: 350px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid var(--gold);">
-    <iframe 
-        src="https://maps.google.com/maps?q=51.873068,107.664063&z=50&output=embed" <!-- Увеличено значение z -->
-        width="100%" 
-        height="100%" 
-        frameborder="0" 
-        style="border:0;" 
-        allowfullscreen="" 
-        aria-hidden="false" 
-        tabindex="0">
-    </iframe>
-</div>
-
+                    <!-- ОБНОВЛЕННАЯ КАРТА С ПРИБЛИЖЕНИЕМ -->
+                    <div class="map-container" style="flex: 1; min-width: 300px; height: 350px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid var(--gold);">
+                        <iframe 
+                            src="https://yandex.ru/map-widget/v1/?ll=107.678077,51.904746&z=15&pt=107.678077,51.904746,pm2rdl" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="1" 
+                            allowfullscreen="true" 
+                            style="position:relative;">
+                        </iframe>
+                    </div>
                 </div>
                 <div class="telegram-section">
                     <div class="telegram-icon"><i class="fab fa-telegram"></i></div>
@@ -757,15 +788,15 @@
         </div>
     </section>
 
-    <!-- Футер (ОБНОВЛЕН АДРЕС И ВРЕМЯ) -->
+    <!-- Футер (ОБНОВЛЕН НА ФЕВРАЛЬ 2026) -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo"><i class="fas fa-crown"></i> Премия ЛЕНАкс</div>
                 <div style="text-align: center;">
                     <p style="font-size: 1.2rem; margin-bottom: 10px;">Торжественный юбилей в стиле кинопремии</p>
-                    <!-- ОБНОВЛЕНО: Новое время -->
-                    <p>15 декабря <span id="currentYear">2023</span> • Сбор гостей в 14:00</p>
+                    <!-- ОБНОВЛЕНО: Февраль 2026 -->
+                    <p>15 февраля <span id="currentYear">2026</span> • Сбор гостей в 14:00</p>
                 </div>
                 <div class="footer-telegram">
                     <p>Telegram-чат для гостей:</p>
@@ -773,7 +804,6 @@
                 </div>
             </div>
             <div class="copyright">
-                <!-- ОБНОВЛЕНО: Новый адрес -->
                 Приглашение на юбилей в стиле кинопремии "ЛЕНАкс". 
                 Комплекс "Серебряный ручей", г. Улан-Удэ, Верхняя Березовка.
                 Все гости приглашены в Telegram-чат для общения и координации.
@@ -782,7 +812,6 @@
     </footer>
 
     <script>
-        // Навигация между страницами (ваш оригинальный код без изменений)
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-links a, .logo, .cta-button');
             const pages = document.querySelectorAll('.page');
@@ -840,13 +869,11 @@
                 observer.observe(card);
             });
 
-            // НОВЫЙ КОД: Автоматическое обновление года в футере
+            // Обновление года в футере для будущих годов
             const currentYearElement = document.getElementById('currentYear');
             const currentYear = new Date().getFullYear();
-            // Меняем год на текущий, только если мероприятие уже прошло в 2023
-            if (currentYear > 2023) {
-                currentYearElement.textContent = currentYear;
-            }
+            // Если мероприятие в 2026 году, оставляем 2026
+            currentYearElement.textContent = '2026';
         });
     </script>
 </body>
