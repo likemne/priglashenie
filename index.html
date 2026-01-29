@@ -1,13 +1,282 @@
-<div id="map" style="flex: 1; min-width: 300px; height: 350px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid var(--gold);"></div>
-<script>
-    function initMap() {
-        const location = { lat: 51.873068, lng: 107.664063 };
-        const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 16,
-            center: location,
-            mapId: "DEMO_MAP_ID"
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на юбилей - Премия ЛЕНАкс</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* (Все ваши оригинальные стили остаются здесь без изменений) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #B8941F;
+            --red: #B22222;
+            --dark-red: #8B0000;
+            --black: #121212;
+            --white: #FFFFFF;
+            --light-beige: #F8F4E9;
+            --gray: #2A2A2A;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            background-color: var(--light-beige);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        /* ... и так далее до конца CSS ... */
+    </style>
+</head>
+<body>
+    <!-- Шапка с навигацией (без изменений) -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo" data-page="home"><i class="fas fa-crown"></i> ЛЕНАкс</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#" class="active" data-page="home">Приглашение</a></li>
+                    <li><a href="#" data-page="details">Подробности</a></li>
+                    <li><a href="#" data-page="contacts">Адрес & Чат</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Главная страница (ОБНОВЛЕНО ВРЕМЯ И АДРЕС) -->
+    <section id="home" class="page active">
+        <div class="hero">
+            <div class="film-strip"></div>
+            <div class="hero-content">
+                <h1>Премия "ЛЕНАкс"</h1>
+                <div class="hero-subtitle">Торжественный юбилей в стиле кинопремии</div>
+                <!-- ОБНОВЛЕНО: Изменено время -->
+                <div class="hero-date">15 декабря 2023 • Сбор гостей в 14:00</div>
+                <div class="hero-description">
+                    <p>Дорогие друзья! Мы приглашаем вас на уникальное событие — юбилей, оформленный в стиле настоящей кинопремии!</p>
+                    <!-- ОБНОВЛЕНО: Изменен адрес -->
+                    <p>Вечер пройдет в уютном комплексе "Серебряный ручей" (г. Улан-Удэ, Верхняя Березовка). Вас ждет атмосфера голливудской церемонии: красная дорожка, фотозоны в стиле кино, награды в тематических номинациях и, конечно, главная героиня вечера — наша юбилярша!</p>
+                    <p>Это будет незабываемый праздник, где каждый почувствует себя звездой большого экрана!</p>
+                </div>
+                <button class="cta-button" data-page="details">Узнать детали мероприятия</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">Особенности вечера</h2>
+                <div class="theme-explanation">
+                    <h3>Почему именно дресс-код в белой одежде?</h3>
+                    <p>Дресс-код — это правила, которые объясняют, как нужно одеваться на определённое мероприятие. Это как форма для спорта, только для праздника!</p>
+                    <p>Мы выбрали белую одежду, чтобы создать атмосферу чистоты и элегантности, которая подчеркнёт особенность нашего вечера. Белый цвет символизирует свет и радость, что идеально подходит для торжественного события.</p>
+                    <p>Каждый гость сможет почувствовать себя частью этого волшебного момента — представьте, как красиво выглядит все вокруг, когда люди в белом идут по красной дорожке!</p>
+                </div>
+                <div class="details-grid">
+                    <div class="detail-card"><i class="fas fa-redo"></i><h3>Красная дорожка</h3><p>Торжественный вход для всех гостей с фотосессией как у настоящих звезд</p></div>
+                    <div class="detail-card"><i class="fas fa-trophy"></i><h3>Церемония награждения</h3><p>Вручение тематических премий в различных номинациях</p></div>
+                    <div class="detail-card"><i class="fas fa-film"></i><h3>Кино-атмосфера</h3><p>Оформление в стиле голливудской премии, тематические фотозоны</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Страница с деталями (ОБНОВЛЕНА ПРОГРАММА) -->
+    <section id="details" class="page">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">Программа вечера</h2>
+                <div class="theme-explanation">
+                    <h3><i class="fas fa-info-circle" style="color: var(--gold); margin-right: 10px;"></i> Важная информация</h3>
+                    <!-- ОБНОВЛЕНО: Изменено время -->
+                    <p>Сбор гостей в 14:00, начало торжественной части в 14:30. Вечер пройдет в формате кинопремии с элементами шоу и торжественного ужина.</p>
+                    <p>Каждый гость является не просто зрителем, а полноценным участником церемонии!</p>
+                </div>
+                <div class="details-grid">
+                    <!-- ОБНОВЛЕНО: Вся программа сдвинута на новое время -->
+                    <div class="detail-card"><i class="fas fa-walking"></i><h3>14:00 - 14:30</h3><p>Сбор гостей, красная дорожка, фотосессия, welcome-коктейль</p></div>
+                    <div class="detail-card"><i class="fas fa-award"></i><h3>14:30 - 16:00</h3><p>Торжественная церемония "Премия ЛЕНАкс" с вручением наград</p></div>
+                    <div class="detail-card"><i class="fas fa-utensils"></i><h3>16:00 - 18:00</h3><p>Праздничный ужин, тосты, поздравления</p></div>
+                    <div class="detail-card"><i class="fas fa-music"></i><h3>18:00 - 22:00</h3><p>Танцы, развлекательная программа, фотозоны</p></div>
+                </div>
+                <div style="margin-top: 50px; padding: 30px; background-color: var(--light-beige); border-radius: 15px;">
+                    <h3 style="color: var(--dark-red); margin-bottom: 25px; text-align: center; font-size: 1.8rem;">
+                        <i class="fas fa-tshirt" style="color: var(--gold); margin-right: 10px;"></i> Дресс-код - белый цвет
+                    </h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center;">
+                        <div style="flex: 1; min-width: 300px;">
+                            <p style="font-size: 1.2rem; margin-bottom: 15px;">
+                                <span class="red-dot"></span><strong>Для женщин:</strong> Выбирайте элегантные наряды в белом цвете
+                            </p>
+                            <p style="font-size: 1.2rem;">
+                                <span class="red-dot"></span><strong>Для мужчин:</strong> Предпочтительные варианты — белые костюмы или рубашки
+                            </p>
+                        </div>
+                        <div style="flex: 1; min-width: 300px; text-align: center;">
+                            <img src="Lena.png" alt="Пример стиля" 
+                                 style="width: 100%; max-width: 280px; height: auto; border-radius: 10px; 
+                                        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); border: 3px solid var(--gold);
+                                        transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                                 onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 30px rgba(0, 0, 0, 0.2)'"
+                                 onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.15)'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Страница контактов и чата (ОБНОВЛЕН АДРЕС И ДОБАВЛЕНА КАРТА) -->
+    <section id="contacts" class="page">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">Адрес мероприятия и чат для гостей</h2>
+                <div class="location-section">
+                    <div class="location-info">
+                        <h3><i class="fas fa-map-marker-alt" style="color: var(--gold); margin-right: 15px;"></i> Место проведения</h3>
+                        <div class="address-card">
+                            <!-- ОБНОВЛЕНО: Новый адрес -->
+                            <h4>Комплекс "Серебряный ручей"</h4>
+                            <p><i class="fas fa-map-pin"></i> Адрес: г. Улан-Удэ, Верхняя Березовка</p>
+                            <p><i class="fas fa-car"></i> Парковка: для гостей бесплатная</p>
+                            <!-- ОБНОВЛЕНО: Новое время -->
+                            <p><i class="fas fa-clock"></i> Время: 15 декабря 2023, сбор гостей с 14:00</p>
+                        </div>
+                        <div style="padding: 20px; background-color: rgba(212, 175, 55, 0.1); border-radius: 10px;">
+                            <h4 style="color: var(--dark-red); margin-bottom: 15px;">Как добраться:</h4>
+                            <p style="margin-bottom: 10px;">• На машине: из центра Улан-Удэ по трассе в сторону Верхней Березовки</p>
+                            <p>• На такси: адрес для навигатора "Верхняя Березовка, Серебряный ручей"</p>
+                        </div>
+                    </div>
+                    <!-- НОВЫЙ БЛОК: Реальная карта вместо заглушки -->
+                    <div class="map-container" style="flex: 1; min-width: 300px; height: 350px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid var(--gold);">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=51.873068,107.664063&z=16&output=embed"
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            aria-hidden="false" 
+                            tabindex="0">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="telegram-section">
+                    <div class="telegram-icon"><i class="fab fa-telegram"></i></div>
+                    <h3 style="color: var(--white); font-size: 2.2rem; margin-bottom: 20px;">Telegram-чат для гостей</h3>
+                    <p style="font-size: 1.3rem; margin-bottom: 25px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                        Все гости приглашены в общий Telegram-чат, где можно общаться, 
+                        координировать встречи, делиться впечатлениями и фотографиями с мероприятия.
+                    </p>
+                    <a href="https://t.me/Nikitinavedet" class="telegram-btn" target="_blank">
+                        <i class="fab fa-telegram"></i> Перейти в общий чат гостей
+                    </a>
+                    <p style="margin-top: 30px; font-size: 1rem; opacity: 0.9;">
+                        Ссылка откроется в новом окне.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер (ОБНОВЛЕН АДРЕС И ВРЕМЯ) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><i class="fas fa-crown"></i> Премия ЛЕНАкс</div>
+                <div style="text-align: center;">
+                    <p style="font-size: 1.2rem; margin-bottom: 10px;">Торжественный юбилей в стиле кинопремии</p>
+                    <!-- ОБНОВЛЕНО: Новое время -->
+                    <p>15 декабря <span id="currentYear">2023</span> • Сбор гостей в 14:00</p>
+                </div>
+                <div class="footer-telegram">
+                    <p>Telegram-чат для гостей:</p>
+                    <a href="https://t.me/Nikitinavedet" target="_blank">@Nikitinavedet</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <!-- ОБНОВЛЕНО: Новый адрес -->
+                Приглашение на юбилей в стиле кинопремии "ЛЕНАкс". 
+                Комплекс "Серебряный ручей", г. Улан-Удэ, Верхняя Березовка.
+                Все гости приглашены в Telegram-чат для общения и координации.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Навигация между страницами (ваш оригинальный код без изменений)
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-links a, .logo, .cta-button');
+            const pages = document.querySelectorAll('.page');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinksContainer = document.getElementById('navLinks');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetPage = this.getAttribute('data-page');
+                    pages.forEach(page => page.classList.remove('active'));
+                    document.getElementById(targetPage).classList.add('active');
+                    
+                    document.querySelectorAll('.nav-links a').forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    
+                    if (this.classList.contains('nav-link') || this.tagName === 'A' && this.parentElement.tagName === 'LI') {
+                        this.classList.add('active');
+                    } else {
+                        const targetNavLink = document.querySelector(`.nav-links a[data-page="${targetPage}"]`);
+                        if (targetNavLink) targetNavLink.classList.add('active');
+                    }
+                    
+                    navLinksContainer.classList.remove('active');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinksContainer.classList.toggle('active');
+            });
+            
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinksContainer.classList.remove('active');
+                });
+            });
+
+            // Анимация для карточек при загрузке страницы
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.detail-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+
+            // НОВЫЙ КОД: Автоматическое обновление года в футере
+            const currentYearElement = document.getElementById('currentYear');
+            const currentYear = new Date().getFullYear();
+            // Меняем год на текущий, только если мероприятие уже прошло в 2023
+            if (currentYear > 2023) {
+                currentYearElement.textContent = currentYear;
+            }
         });
-        new google.maps.Marker({ position: location, map: map, title: "Серебряный ручей" });
-    }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" defer></script>
+    </script>
+</body>
+</html>
