@@ -734,8 +734,13 @@
                             </p>
                         </div>
                         <div style="flex: 1; min-width: 300px; text-align: center;">
-                            <img src="Lena.png" alt="Пример стиля" style="width: 100%; max-width: 280px; height: auto; border-radius: 10px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); border: 3px solid var(--gold);">
-                        </div>
+    <img src="Lena.png" alt="Пример стиля" 
+         style="width: 100%; max-width: 280px; height: auto; border-radius: 10px; 
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); border: 3px solid var(--gold);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;"
+         onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 30px rgba(0, 0, 0, 0.2)'"
+         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.15)'">
+</div>
                     </div>
                 </div>
             </div>
