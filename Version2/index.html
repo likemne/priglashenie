@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ленский кинофестиваль - Приглашение</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marck+Script&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #faf7f2;
+            color: #5d4037;
+            line-height: 1.6;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Кинолента сверху и снизу */
+        .film-strip {
+            height: 40px;
+            background: repeating-linear-gradient(
+                90deg,
+                #000 0px, #000 20px,
+                #f5f5f5 20px, #f5f5f5 40px
+            );
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .film-strip::before,
+        .film-strip::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background-color: #d4af37;
+        }
+        
+        .film-strip::before {
+            top: -8px;
+        }
+        
+        .film-strip::after {
+            bottom: -8px;
+        }
+        
+        .film-strip-bottom {
+            margin-top: 30px;
+            transform: rotate(180deg);
+        }
+        
+        /* Заголовок фестиваля */
+        .festival-title {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+        
+        .festival-name {
+            font-family: 'Marck Script', cursive;
+            font-size: 3.8rem;
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .festival-name::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        }
+        
+        .festival-subtitle {
+            font-size: 1.5rem;
+            color: #8d6e63;
+            font-weight: 400;
+            margin-top: 15px;
+        }
+        
+        /* Основное содержимое */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .invitation-card {
+            background-color: rgba(255, 253, 250, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            border: 1px solid #f0e6d6;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .invitation-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #d4af37, #f5e8c8, #d4af37);
+        }
+        
+        .host-photo {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            padding: 10px;
+        }
+        
+        .host-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        /* Текст приглашения */
+        .invitation-text {
+            margin-bottom: 25px;
+        }
+        
+        .greeting {
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .message {
+            font-size: 1.3rem;
+            color: #5d4037;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        /* Детали мероприятия */
+        .event-details {
+            background-color: #fdf8f0;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #d4af37;
+        }
+        
+        .detail-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .detail-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .detail-icon {
+            color: #d4af37;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .detail-text {
+            font-size: 1.2rem;
+        }
+        
+        .highlight {
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        /* Кнопки и ссылки */
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .btn-telegram {
+            background-color: #0088cc;
+            color: white;
+        }
+        
+        .btn-map {
+            background-color: #d4af37;
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-telegram:hover {
+            background-color: #0077b5;
+        }
+        
+        .btn-map:hover {
+            background-color: #c19b2e;
+        }
+        
+        .btn-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Адресный код */
+        .address-code {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+            border: 2px dashed #d4af37;
+        }
+        
+        .code-label {
+            font-size: 1rem;
+            color: #8d6e63;
+            margin-bottom: 5px;
+        }
+        
+        .code-value {
+            font-size: 1.5rem;
+            color: #5d4037;
+            font-weight: 700;
+            letter-spacing: 3px;
+            background-color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        /* Футер */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #8d6e63;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            border-top: 1px solid #f0e6d6;
+        }
+        
+        .signature {
+            font-family: 'Marck Script', cursive;
+            font-size: 1.8rem;
+            color: #d4af37;
+            margin-top: 10px;
+        }
+        
+        /* Волнообразные элементы */
+        .wave-decoration {
+            height: 80px;
+            overflow: hidden;
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .wave {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23f5f0e1'/%3E%3C/svg%3E");
+            background-size: cover;
+        }
+        
+        .wave-bottom {
+            transform: rotate(180deg);
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23f5f0e1'/%3E%3C/svg%3E");
+            background-size: cover;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .festival-name {
+                font-size: 2.8rem;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .btn {
+                min-width: 100%;
+            }
+            
+            .greeting {
+                font-size: 1.8rem;
+            }
+            
+            .message {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="film-strip"></div>
+    
+    <div class="container">
+        <div class="festival-title">
+            <h1 class="festival-name">Ленский кинофестиваль</h1>
+            <p class="festival-subtitle">Юбилейное торжество в стиле кинематографа</p>
+        </div>
+        
+        <div class="wave-decoration">
+            <div class="wave"></div>
+        </div>
+        
+        <div class="main-content">
+            <div class="invitation-card">
+                <div class="invitation-text">
+                    <h2 class="greeting">Дорогой друг!</h2>
+                    <p class="message">Приглашаю тебя на мой юбилей, который я решила провести в необычном формате кинофестиваля! Это будет вечер, полный ярких эмоций, прекрасных моментов и, конечно, кинематографической магии.</p>
+                    <p class="message">Я тщательно подготовила программу, где каждый гость станет частью этого праздничного "фильма". Жду тебя, чтобы разделить этот особенный день вместе!</p>
+                </div>
+                
+                <div class="event-details">
+                    <div class="detail-item">
+                        <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="detail-text">
+                            <span class="highlight">Адрес:</span> г. Улан-Удэ, Верхняя Березовка, Комплекс "Серебряный ручей"
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="detail-text">
+                            <span class="highlight">Дата:</span> 4 июля 2026 года
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-icon"><i class="fas fa-clock"></i></div>
+                        <div class="detail-text">
+                            <span class="highlight">Время:</span> Сбор гостей в <span class="highlight">14:00</span>!<br>
+                            Начало мероприятия в <span class="highlight">14:30</span>!
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="address-code">
+                    <div class="code-label">Адресный код (домофон):</div>
+                    <div class="code-value">БЕЛЫЙ ЦВЕТ</div>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="https://2gis.ru/ulanude/geo/70000001089165128/107.678326,51.904615" class="btn btn-map" target="_blank">
+                        <i class="fas fa-map-marked-alt btn-icon"></i> Как добраться
+                    </a>
+                    
+                    <a href="https://t.me/+7ZPUC_0cROtiM2Yy" class="btn btn-telegram" target="_blank">
+                        <i class="fab fa-telegram btn-icon"></i> Обсудить в Telegram
+                    </a>
+                </div>
+            </div>
+            
+            <div class="host-photo">
+                <!-- Замените src на путь к вашей фотографии -->
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Лена - хозяйка праздника">
+                <div style="text-align: center; padding: 15px; font-style: italic; color: #8d6e63;">
+                    Лена - режиссер и главная звезда этого вечера
+                </div>
+            </div>
+        </div>
+        
+        <div class="wave-decoration">
+            <div class="wave wave-bottom"></div>
+        </div>
+    </div>
+    
+    <div class="film-strip film-strip-bottom"></div>
+    
+    <div class="footer">
+        <p>С нетерпением жду встречи на Ленском кинофестивале!</p>
+        <p class="signature">Твоя Лена</p>
+    </div>
+
+    <script>
+        // Простая анимация для элементов при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            // Анимируем появление элементов
+            const animatedElements = document.querySelectorAll('.festival-title, .invitation-card, .host-photo');
+            
+            animatedElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+            
+            // Добавляем интерактивность к деталям мероприятия
+            const detailItems = document.querySelectorAll('.detail-item');
+            detailItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(10px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
