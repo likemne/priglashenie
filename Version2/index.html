@@ -201,6 +201,61 @@
             font-weight: 600;
         }
         
+        /* Блок с дресс-кодом */
+        .dress-code {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            text-align: center;
+            border: 2px dashed #d4af37;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dress-code::before {
+            content: "✨";
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .dress-code::after {
+            content: "✨";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .dress-code-title {
+            font-size: 1.3rem;
+            color: #8d6e63;
+            margin-bottom: 10px;
+        }
+        
+        .dress-code-value {
+            font-size: 2.2rem;
+            color: #5d4037;
+            font-weight: 700;
+            letter-spacing: 3px;
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            text-transform: uppercase;
+            border: 3px solid #f5e8c8;
+            background: linear-gradient(45deg, #ffffff, #f9f5e7);
+        }
+        
+        .dress-code-note {
+            font-size: 1rem;
+            color: #8d6e63;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
         /* Кнопки и ссылки */
         .action-buttons {
             display: flex;
@@ -249,33 +304,6 @@
         .btn-icon {
             margin-right: 10px;
             font-size: 1.2rem;
-        }
-        
-        /* Адресный код */
-        .address-code {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 20px;
-            text-align: center;
-            border: 2px dashed #d4af37;
-        }
-        
-        .code-label {
-            font-size: 1rem;
-            color: #8d6e63;
-            margin-bottom: 5px;
-        }
-        
-        .code-value {
-            font-size: 1.5rem;
-            color: #5d4037;
-            font-weight: 700;
-            letter-spacing: 3px;
-            background-color: white;
-            padding: 5px 15px;
-            border-radius: 5px;
-            display: inline-block;
         }
         
         /* Футер */
@@ -338,6 +366,11 @@
             .message {
                 font-size: 1.2rem;
             }
+            
+            .dress-code-value {
+                font-size: 1.8rem;
+                padding: 8px 15px;
+            }
         }
     </style>
 </head>
@@ -386,9 +419,10 @@
                     </div>
                 </div>
                 
-                <div class="address-code">
-                    <div class="code-label">Адресный код (домофон):</div>
-                    <div class="code-value">БЕЛЫЙ ЦВЕТ</div>
+                <div class="dress-code">
+                    <div class="dress-code-title">Дресс-код для гостей</div>
+                    <div class="dress-code-value">БЕЛЫЙ ЦВЕТ</div>
+                    <div class="dress-code-note">Поддержите праздничную атмосферу светлым нарядом</div>
                 </div>
                 
                 <div class="action-buttons">
@@ -403,8 +437,8 @@
             </div>
             
             <div class="host-photo">
-                <!-- Замените src на путь к вашей фотографии -->
-                <img src="https://likemne.github.io/priglashenie/5193166239340104870.jpg" alt="Лена - хозяйка праздника">
+                <!-- Замените src на путь к вашей фотографии (5193166239340104870.jpg) -->
+                <img src="https://likemne.github.io/priglashenie/5193166239340104870.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Лена - хозяйка праздника">
                 <div style="text-align: center; padding: 15px; font-style: italic; color: #8d6e63;">
                     Лена - режиссер и главная звезда этого вечера
                 </div>
@@ -452,8 +486,16 @@
                     this.style.transform = 'translateX(0)';
                 });
             });
+            
+            // Добавляем мерцание для блока с дресс-кодом
+            const dressCode = document.querySelector('.dress-code-value');
+            setInterval(() => {
+                dressCode.style.boxShadow = '0 0 15px rgba(212, 175, 55, 0.7)';
+                setTimeout(() => {
+                    dressCode.style.boxShadow = '0 0 5px rgba(212, 175, 55, 0.3)';
+                }, 800);
+            }, 3000);
         });
     </script>
 </body>
 </html>
-
