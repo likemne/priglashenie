@@ -7,6 +7,7 @@
 
 Готовая страница доступна по адресу:  
 **[Вариант 1](https://likemne.github.io/priglashenie/)**
+
 **[Вариант 2](https://likemne.github.io/priglashenie/Version2/)**
 
 
