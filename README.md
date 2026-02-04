@@ -6,9 +6,10 @@
 ## 🌐 Посмотреть страницу
 
 Готовая страница доступна по адресу:  
-**[https://likemne.github.io/priglashenie/](Вариант 1)**
+**[Вариант 1](https://likemne.github.io/priglashenie/)**
 
-**[https://likemne.github.io/priglashenie/Version2/](Вариант 2)**
+**[Вариант 2](https://likemne.github.io/priglashenie/Version2/)**
+
 
 ## 🖼️ Скриншот проекта
 
