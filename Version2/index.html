@@ -422,6 +422,69 @@
     </style>
 </head>
 <body>
+
+    <!-- ЭКСТРЕННОЕ УВЕДОМЛЕНИЕ -->
+<div id="emergency-banner" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, #ff4444, #ff8800, #ff4444);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 9999;
+    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.3);
+    animation: pulse 2s infinite;
+    border-bottom: 3px solid white;
+">
+    <span style="margin-right: 20px;">🎬 ВАЖНО: Перейдите в чат для гостей в Telegram!</span>
+    <a href="https://t.me/+7ZPUC_0cROtiM2Yy" 
+       target="_blank" 
+       style="
+           background: white;
+           color: #ff4444;
+           padding: 8px 20px;
+           border-radius: 50px;
+           text-decoration: none;
+           font-weight: bold;
+           display: inline-block;
+           margin: 0 10px;
+           box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+       "
+       onmouseover="this.style.transform='scale(1.05)'"
+       onmouseout="this.style.transform='scale(1)'"
+    >
+        ПЕРЕЙТИ В ЧАТ
+    </a>
+    <button onclick="document.getElementById('emergency-banner').style.display='none'" 
+            style="
+                background: rgba(255,255,255,0.2);
+                border: 2px solid white;
+                color: white;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+                margin-left: 20px;
+                font-weight: bold;
+            "
+    >
+        ✕
+    </button>
+</div>
+
+<style>
+@keyframes pulse {
+    0% { opacity: 0.9; }
+    50% { opacity: 1; }
+    100% { opacity: 0.9; }
+}
+</style>
+
+    
     <!-- Верхняя кинопленка -->
     <div class="film-tape film-tape-top">
         <img src="movietape.svg" alt="Кинопленка">
@@ -576,6 +639,7 @@
     </script>
 </body>
 </html>
+
 
 
 
